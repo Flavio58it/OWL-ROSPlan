@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find rosplan_perception_manager)/launch/rosplan_knowledge_base.launch" />
+    <include file="$(find rosplan_perception_manager)/launch/planning_system.launch" />
+
+
+    <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" />
+    <node name="rosplan_perception_manager" pkg="rosplan_perception_manager" type="dummy_perception.py" />
+    
+</launch>
