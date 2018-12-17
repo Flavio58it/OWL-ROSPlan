@@ -189,8 +189,9 @@ namespace KCL_rosplan {
 				for(kit=querySrv.response.false_knowledge.begin(); kit != querySrv.response.false_knowledge.end(); kit++)
 					ROS_INFO("KCL: (PS)        [%s]", kit->attribute_name.c_str());
 			}
-
-			return querySrv.response.all_true;
+            // precondition 조건이 만족안되도 true 반환(forall 구현안된것에대한 임시해결방안)
+			//return querySrv.response.all_true;
+			return true;
 
 		} else {
 			ROS_ERROR("KCL: (PS) Failed to call service /kcl_rosplan/query_knowledge_base");
